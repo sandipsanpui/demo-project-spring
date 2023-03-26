@@ -10,6 +10,6 @@ import com.practice.demo.service.factory.UserFactory;
 public class UserEventService {
 	
 	public UserEventDto getUserEvent(UserEvent type) {
-		return UserFactory.getService(type);
+		return null;
 	}	
 }

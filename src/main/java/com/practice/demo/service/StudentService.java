@@ -68,4 +68,19 @@ public class StudentService {
 		studentRepository.save(student);
 	}
 	
+	public void deleteStudent(String id) throws StudentNotFoundException {
+		
+		Optional<Student> studentOptional = studentRepository.findById(id);
+		
+		if(!studentOptional.isPresent()) {
+			throw new StudentNotFoundException(id);
+		} 
+		studentRepository.deleteById(id);
+	}
+	
+	public void deleteAllStudent() throws StudentNotFoundException {
+		 
+		studentRepository.deleteAll();
+	}
+	
 }
